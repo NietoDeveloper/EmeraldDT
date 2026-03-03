@@ -57,13 +57,13 @@ export const HeroSection = () => {
         <div className="flex items-center gap-3 mb-4">
           <div className="w-8 h-[1px] bg-gold" />
           <h2 className="text-gold tracking-[0.3em] md:tracking-[0.5em] uppercase text-[9px] md:text-xs font-mono font-bold drop-shadow-md">
-            Emerald DT <span className="text-white/50 px-2">//</span> Colombian Gems
+            Emerald DT <span className="text-white/50 px-2">//</span> Boyaca - Bogota
           </h2>
         </div>
 
         {/* Título Principal - Con sombra para legibilidad en fondos claros */}
         <h1 className="text-[14vw] sm:text-[10vw] md:text-[90px] lg:text-[110px] xl:text-[130px] font-bold uppercase mb-8 leading-[0.85] tracking-tighter text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">
-          Eternal <br /> 
+          Colombian <br /> 
           <span className="text-emerald drop-shadow-[0_0_20px_rgba(16,185,129,0.5)]">
             Emeralds
           </span>
