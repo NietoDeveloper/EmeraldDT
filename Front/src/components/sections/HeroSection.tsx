@@ -35,9 +35,7 @@ export const HeroSection = () => {
           loop
           playsInline
           muted={isMuted}
-          /* Mobile: object-cover para llenar la pantalla (310px+).
-             Desktop: md:object-contain para evitar zoom y que la esmeralda baje del Navbar (hasta 1900px).
-          */
+
           className="w-full h-full object-cover md:object-contain object-center transition-opacity duration-700"
         >
           <source src="/assets/videos/hero-emerald.webm" type="video/webm" />
