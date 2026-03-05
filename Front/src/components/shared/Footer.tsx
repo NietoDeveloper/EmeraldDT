@@ -22,9 +22,7 @@ export const Footer = () => {
               EMERALD<span className="text-gold italic">DT</span>
             </h2>
             <div className="space-y-3">
-              <p className="text-[10px] leading-relaxed uppercase tracking-[0.3em] text-emerald font-bold">
-                // Nieto Laboratory Legacy
-              </p>
+
               <p className="text-[11px] leading-relaxed uppercase tracking-[0.15em] opacity-40 max-w-xs font-mono">
                 The standard of Colombian gems. <br />
                 Excellence. Transparency. <br />
