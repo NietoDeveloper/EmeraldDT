@@ -50,12 +50,7 @@ export const HeroSection = () => {
       {/* Solo un degradado mínimo en la base para que los botones respiren */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-[2] pointer-events-none" />
 
-      {/* Content Layer */}
-      <div className="w-full max-w-[1900px] mx-auto px-6 sm:px-12 md:px-24 lg:px-32 xl:px-48 z-10 animate-fade-in relative">
-        
 
-
-      </div>
 
       {/* Control de Audio Flotante */}
       <div className="absolute bottom-6 right-6 md:bottom-10 md:right-10 z-20">
