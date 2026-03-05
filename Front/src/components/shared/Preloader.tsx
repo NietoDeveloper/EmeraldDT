@@ -11,18 +11,16 @@ export default function Preloader() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  // Función para manejar el estado de carga y las clases del DOM
   const startLoadingCycle = () => {
     setLoading(true);
-    // Bloqueamos el contenido inmediatamente al iniciar
     if (typeof document !== 'undefined') {
       document.documentElement.classList.add("js-loading");
       document.documentElement.classList.remove("js-loaded");
     }
 
+    // Ciclo total de 5 segundos
     const timer = setTimeout(() => {
       setLoading(false);
-      // Nota: La clase 'js-loaded' se activará al finalizar la animación de salida (onExitComplete)
     }, 5000);
 
     return () => clearTimeout(timer);
@@ -39,7 +37,6 @@ export default function Preloader() {
     }
   }, [pathname, searchParams]);
 
-  // Manejador para cuando Framer Motion termina de desvanecer el preloader
   const handleExitComplete = () => {
     if (typeof document !== 'undefined') {
       document.documentElement.classList.remove("js-loading");
@@ -58,7 +55,7 @@ export default function Preloader() {
           animate={{ opacity: 1 }}
           exit={{ 
             opacity: 0, 
-            transition: { duration: 1.2, ease: [0.43, 0.13, 0.23, 0.96] } 
+            transition: { duration: 1, ease: [0.43, 0.13, 0.23, 0.96] } 
           }}
           className="fixed inset-0 z-[99999] flex items-center justify-center bg-[#010502] select-none pointer-events-auto"
         >
@@ -77,7 +74,7 @@ export default function Preloader() {
 
           <div className="relative z-10 flex flex-col items-center w-full max-w-[310px] md:max-w-none px-6">
             
-            {/* LOGO PNG - ANIMACIÓN DE PULSO Y BRILLO */}
+            {/* LOGO ANIMADO */}
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ 
@@ -113,18 +110,18 @@ export default function Preloader() {
               
               <div className="flex items-center gap-3 mb-10 opacity-40">
                  <span className="h-[1px] w-6 bg-emerald-500" />
-                 <span className="text-emerald-400 font-mono text-[8px] tracking-[0.3em] uppercase">System Calibration</span>
+                 <span className="text-emerald-400 font-mono text-[8px] tracking-[0.3em] uppercase">Security Cluster Active</span>
                  <span className="h-[1px] w-6 bg-emerald-500" />
               </div>
 
-              {/* BARRA DE PROGRESO SINCRONIZADA A 5s */}
+              {/* BARRA DE PROGRESO - CARGA EN 4 SEGUNDOS */}
               <div className="w-full max-w-[260px] h-[1px] bg-emerald-950/50 relative overflow-hidden rounded-full border border-white/5">
                 <motion.div 
                   initial={{ x: "-100%" }}
                   animate={{ x: "0%" }}
                   transition={{ 
-                    duration: 5, 
-                    ease: "linear"
+                    duration: 4, // AJUSTE: Carga en 4 segundos
+                    ease: [0.65, 0, 0.35, 1] 
                   }}
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-400 to-emerald-600 shadow-[0_0_10px_rgba(52,211,153,0.5)]"
                 />
@@ -135,7 +132,7 @@ export default function Preloader() {
                 transition={{ duration: 2.5, repeat: Infinity }}
                 className="mt-6 text-[9px] text-emerald-300/30 font-mono tracking-[0.4em] uppercase"
               >
-                {pathname === '/' ? 'Establishing Secure Link' : `Accessing ${pathname}`}
+                {pathname === '/' ? 'Establishing Secure Link' : `Syncing ${pathname}`}
               </motion.p>
             </motion.div>
           </div>

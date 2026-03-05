@@ -48,8 +48,7 @@ interface RootLayoutProps {
 
 /**
  * Emerald DT - Root Layout Orchestrator
- * Ajuste: Zero-Flicker Engineering
- * Bloqueo de renderizado inicial mediante clase 'js-loading'
+ * Arquitectura de Bloqueo Crítico para Ciclo S+
  */
 export default async function RootLayout(props: RootLayoutProps) {
   const { children, params } = props;
@@ -62,21 +61,27 @@ export default async function RootLayout(props: RootLayoutProps) {
       className={`${sans.variable} ${mono.variable} scroll-smooth js-loading`}
       suppressHydrationWarning 
     >
-      {/* AJUSTE DE INGENIERÍA: 
-        Forzamos el body a ser bg-black y ocultamos el contenido 
-        hasta que el Preloader (Client Component) remueva 'js-loading'.
-      */}
+      <head>
+        {/* CSS CRÍTICO INLINE: Evita el parpadeo centesimal antes de cargar globals.css */}
+        <style dangerouslySetInnerHTML={{ __html: `
+          html.js-loading body { overflow: hidden !important; background: #000 !important; }
+          #main-content { opacity: 0; visibility: hidden; }
+          html.js-loaded #main-content { 
+            opacity: 1 !important; 
+            visibility: visible !important; 
+            transition: opacity 1.2s cubic-bezier(0.43, 0.13, 0.23, 0.96); 
+          }
+        `}} />
+      </head>
       <body className="antialiased bg-black text-white selection:bg-emerald-500/30 selection:text-emerald-200 min-h-screen flex flex-col font-sans overflow-x-hidden">
         
-        {/* Capa de Preloader: Prioridad Z-Index Máxima */}
+        {/* Capa de Preloader: Controla las clases js-loading/js-loaded */}
         <Suspense fallback={null}>
           <Preloader />
         </Suspense>
 
-        {/* ID: main-content 
-          Sincronizado con el CSS crítico para evitar el parpadeo centesimal.
-        */}
-        <div id="main-content" className="flex flex-col min-h-screen opacity-0 transition-opacity duration-1000">
+        {/* Estructura Principal */}
+        <div id="main-content" className="flex flex-col min-h-screen">
           <Navbar />
           
           <main className="flex-grow w-full pt-20 md:pt-24 relative z-10">
@@ -88,11 +93,6 @@ export default async function RootLayout(props: RootLayoutProps) {
           <Footer />
         </div>
 
-        {/* Inline CSS para garantizar bloqueo inmediato antes de que cargue globals.css */}
-        <style dangerouslySetInnerHTML={{ __html: `
-          .js-loading #main-content { opacity: 0 !important; visibility: hidden !important; }
-          .js-loaded #main-content { opacity: 1 !important; visibility: visible !important; }
-        `}} />
       </body>
     </html>
   );
