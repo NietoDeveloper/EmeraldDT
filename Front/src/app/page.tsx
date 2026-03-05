@@ -37,14 +37,7 @@ export default async function Home({ params }: HomePageProps) {
                 {isEs ? '// Próximo Lanzamiento' : '// Upcoming Release'}
               </h2>
 
-              
-              <div className="flex flex-col sm:flex-row gap-6 md:gap-10 items-start sm:items-center">
-                <MainButton 
-                  text={isEs ? 'Ver Detalles' : 'View Details'} 
-                  variant="white" 
-                />
 
-              </div>
             </div>
           </div>
         </div>
