@@ -77,9 +77,7 @@ export const HeroSection = () => {
               className="w-full sm:w-auto border-2 border-white tracking-[0.2em] text-[11px] font-bold py-4 hover:bg-white hover:text-black transition-all duration-300" 
             />
           </div>
-          <div className="w-full sm:w-auto">
 
-          </div>
         </div>
       </div>
 
