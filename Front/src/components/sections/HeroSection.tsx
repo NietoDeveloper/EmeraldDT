@@ -13,8 +13,4 @@ export const HeroSection = () => {
       videoRef.current.play().catch(error => {
         console.warn("Autoplay preventivo: ", error);
       });
-    }
-  }, []);
 
-
-  return (
