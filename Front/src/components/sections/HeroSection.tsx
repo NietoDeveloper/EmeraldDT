@@ -49,13 +49,5 @@ export const HeroSection = () => {
       {/* Gradiente base para legibilidad de UI */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-[2] pointer-events-none" />
 
-      {/* Content Layer */}
-      <div className="w-full max-w-[1900px] mx-auto px-6 sm:px-12 md:px-24 lg:px-32 xl:px-48 z-10 animate-fade-in relative">
-        
-
-
-
-
-    </section>
   );
 };
