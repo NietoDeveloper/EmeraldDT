@@ -55,12 +55,6 @@ export const HeroSection = () => {
       <div className="w-full max-w-[1900px] mx-auto px-6 sm:px-12 md:px-24 lg:px-32 xl:px-48 z-10 animate-fade-in relative">
         
         {/* Etiqueta Técnica */}
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-8 h-[1px] bg-gold" />
-          <h2 className="text-gold tracking-[0.3em] md:tracking-[0.5em] uppercase text-[9px] md:text-xs font-mono font-bold drop-shadow-md">
-            Emerald DT <span className="text-white/50 px-2">//</span> Boyaca - Bogota
-          </h2>
-        </div>
 
 
 
