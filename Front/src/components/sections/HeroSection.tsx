@@ -78,11 +78,7 @@ export const HeroSection = () => {
             />
           </div>
           <div className="w-full sm:w-auto">
-            <MainButton 
-              text="VIEW CATEGORIES" 
-              variant="gold" 
-              className="w-full sm:w-auto border-2 border-gold text-gold tracking-[0.2em] text-[11px] font-bold py-4 hover:bg-gold hover:text-black transition-all duration-300" 
-            />
+
           </div>
         </div>
       </div>
