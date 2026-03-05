@@ -23,11 +23,6 @@ export const Footer = () => {
             </h2>
             <div className="space-y-3">
 
-              <p className="text-[11px] leading-relaxed uppercase tracking-[0.15em] opacity-40 max-w-xs font-mono">
-                The standard of Colombian gems. <br />
-                Excellence. Transparency. <br />
-                High Engineering.
-              </p>
             </div>
           </div>
 
