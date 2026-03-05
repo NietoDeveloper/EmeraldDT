@@ -75,33 +75,3 @@ export const Navbar = () => {
               <span className="font-bold tracking-[0.2em] uppercase text-emerald-500 text-lg md:text-3xl transition-all duration-500 group-hover:text-[#D4AF37] group-hover:-translate-y-1">
                 Emerald
               </span>
-              <span className="font-black tracking-tighter uppercase text-[#D4AF37] text-lg md:text-3xl italic transition-all duration-500 group-hover:-translate-y-1">
-                DT
-              </span>
-            </div>
-          </Link>
-
-          {/* DESKTOP MENU */}
-          <div className="hidden lg:flex items-center gap-8 xl:gap-14">
-            {navLinks.map((link) => (
-              <div key={link.name} className="relative group/item">
-                <Link 
-                  href={link.href} 
-                  className="flex items-center gap-2 text-[10px] xl:text-[11px] uppercase tracking-[0.5em] font-bold text-white/80 hover:text-[#D4AF37] hover:-translate-y-1 transition-all duration-300"
-                >
-                  {link.name}
-                  {link.subItems && link.subItems.length > 0 && (
-                    <ChevronDown size={12} className="group-hover/item:rotate-180 transition-transform duration-300 opacity-50" />
-                  )}
-                </Link>
-
-                {link.subItems && link.subItems.length > 0 && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-56 pt-6 opacity-0 translate-y-2 pointer-events-none group-hover/item:opacity-100 group-hover/item:translate-y-0 group-hover/item:pointer-events-auto transition-all duration-500">
-                    <div className="bg-black/40 backdrop-blur-3xl border border-white/5 p-6 shadow-2xl">
-                      <div className="flex flex-col gap-4 relative">
-                        {link.subItems.map((sub) => (
-                          <Link key={sub.name} href={sub.href} className="text-[9px] uppercase tracking-[0.2em] text-zinc-400 hover:text-[#D4AF37] hover:-translate-y-0.5 transition-all duration-300">
-   
-    </>
-  );
-};
