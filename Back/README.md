@@ -29,8 +29,6 @@ emerald-dt-api/
 └── tsconfig.json           # TypeScript compiler configuration
 ```
 
----
-
 ## 🛡️ Security Protocols (S+ Cycle)
 
 - **Double Cluster Isolation:** Physical and logical separation between public catalog data and sensitive customer transactional information.
