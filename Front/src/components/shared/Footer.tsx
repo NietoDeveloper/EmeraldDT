@@ -4,11 +4,6 @@ import React from 'react';
 import Link from 'next/link';
 import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
 
-/**
- * Emerald DT - Footer Component
- * Calibrado para: 310px - 1900px
- * Fix: Eliminación de scroll residual mediante box-sizing y margin reset.
- */
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
