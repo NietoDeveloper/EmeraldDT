@@ -152,20 +152,7 @@ export const Navbar = () => {
         <div className="relative flex flex-col h-full justify-center items-center px-10 gap-16">
 
 
-          <div className="flex flex-col items-center gap-10 w-full">
-            {navLinks.map((item, index) => (
-              <Link 
-                key={item.name} 
-                href={item.href} 
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-3xl md:text-5xl uppercase tracking-[0.5em] font-black text-white/90 hover:text-[#D4AF37] hover:-translate-y-2 transition-all duration-500
-                  ${isMobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
-                style={{ transitionDelay: `${index * 50}ms` }}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
+          
 
           <div className={`flex gap-16 items-center transition-all duration-1000 delay-300 ${isMobileMenuOpen ? "opacity-100" : "opacity-0"}`}>
              <Link href="/cart" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-[#D4AF37] transition-all hover:-translate-y-1"><ShoppingCart size={32}/></Link>
