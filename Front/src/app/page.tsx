@@ -38,12 +38,6 @@ export default async function Home({ params }: HomePageProps) {
               </h2>
 
               
-              <p className="text-zinc-400 text-sm md:text-xl lg:text-2xl mb-14 max-w-2xl leading-relaxed font-medium">
-                {isEs 
-                  ? 'La pureza del cristal colombiano alcanza nuevas alturas. Una serie limitada de 12 obras maestras certificadas bajo el rigor científico del Nieto Laboratory.' 
-                  : 'The purity of Colombian crystal reaches new heights. A limited series of 12 masterpieces certified under the scientific rigor of the Nieto Laboratory.'}
-              </p>
-              
               <div className="flex flex-col sm:flex-row gap-6 md:gap-10 items-start sm:items-center">
                 <MainButton 
                   text={isEs ? 'Ver Detalles' : 'View Details'} 
