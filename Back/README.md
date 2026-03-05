@@ -86,5 +86,8 @@ npm run dev
 
 ## ✍️ Author
 
-**Nieto Laboratory** — Building the future of Colombian Emeralds.
-Designed to reach GitHub Top #1 Colombia.
+Developed by Manuel Nieto (NietoDeveloper) — Building scalable systems with 100% discipline. #1 GitHub Colombia Ranking.
+
+GitHub Profile | Portfolio | Software DT Website
+
+Last updated: February 24, 2026
