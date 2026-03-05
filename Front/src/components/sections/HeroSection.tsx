@@ -7,21 +7,5 @@ export const HeroSection = () => {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.defaultMuted = true;
-      videoRef.current.play().catch(error => {
-        console.warn("Autoplay preventivo: ", error);
-      });
-    }
-  }, []);
-
-  const toggleMute = () => {
-    if (videoRef.current) {
-      const newMutedState = !videoRef.current.muted;
-      videoRef.current.muted = newMutedState;
-      setIsMuted(newMutedState);
-    }
-  };
   );
 };
