@@ -2,77 +2,77 @@
 # 💎 Emerald DT - Backend Security Cluster
 ### High-Engineering Emerald Commercialization Platform
 
-Este es el núcleo de servicios (API) de Emerald DT. Diseñado bajo una arquitectura de **Máxima Seguridad** y escalabilidad de **Doble Cluster**, siguiendo los estándares visuales y técnicos inspirados en SpaceX.
+This is the core services layer (API) of Emerald DT. Designed under a **Maximum Security** architecture and **Double Cluster** scalability, following the visual and technical standards inspired by SpaceX.
 
 ---
 
-## 🏗️ Arquitectura de Carpetas (Domain-Driven Design)
+## 🏗️ Folder Architecture (Domain-Driven Design)
 
-El proyecto utiliza una estructura modular donde cada recurso es independiente, facilitando el mantenimiento y la auditoría de seguridad.
+The project uses a modular structure where each resource is independent, facilitating maintenance and security auditing.
 
 ```
 emerald-dt-api/
-├── dist/                   # Código compilado (JS) para producción
-├── src/                    # Código fuente (TS)
-│   ├── config/             # Configuraciones de Cluster (MongoDB) y Providers
-│   ├── core/               # Lógica central: Middlewares de seguridad y Auth
-│   ├── modules/            # Dominios de Negocio (Módulos independientes)
-│   │   ├── emeralds/       # Gestión de gemas y certificados
-│   │   ├── users/          # Gestión de perfiles y roles
-│   │   └── payments/       # Pasarela de pagos (Stripe/Wompi)
-│   ├── shared/             # Utilidades, constantes y tipos globales
-│   ├── app.ts              # Configuración de Express y Escudos (Helmet/Cors)
-│   └── server.ts           # Punto de entrada (Bootstrapping del sistema)
-├── Dockerfile              # Configuración de contenedor para Railway/AWS
-├── .env.example            # Plantilla de variables de entorno
-├── .gitignore              # Protección de secretos
-├── package.json            # Dependencias y scripts
-└── tsconfig.json           # Configuración del compilador de TypeScript
+├── dist/                   # Compiled (JS) code for production
+├── src/                    # Source code (TS)
+│   ├── config/             # Cluster (MongoDB) configurations and Providers
+│   ├── core/               # Core logic: Security Middlewares and Auth
+│   ├── modules/            # Business Domains (Independent Modules)
+│   │   ├── emeralds/       # Gem and certificate management
+│   │   ├── users/          # Profile and role management
+│   │   └── payments/       # Payment gateway (Stripe/Wompi)
+│   ├── shared/             # Utilities, constants and global types
+│   ├── app.ts              # Express configuration and Shields (Helmet/Cors)
+│   └── server.ts           # Entry point (System Bootstrapping)
+├── Dockerfile              # Container configuration for Railway/AWS
+├── .env.example            # Environment variables template
+├── .gitignore              # Secrets protection
+├── package.json            # Dependencies and scripts
+└── tsconfig.json           # TypeScript compiler configuration
 ```
 
 ---
 
-## 🛡️ Protocolos de Seguridad (Ciclo S+)
+## 🛡️ Security Protocols (S+ Cycle)
 
-- **Double Cluster Isolation:** Separación física y lógica entre los datos del catálogo público y la información transaccional sensible de los clientes.
-- **JWT Multi-Role:** Control de acceso basado en roles (RBAC) para empleados del dashboard e inversores.
-- **Rate Limiting:** Protección contra ataques de fuerza bruta en los endpoints de autenticación.
-- **Helmet & CORS:** Configuración estricta de headers para prevenir Cross-Site Scripting (XSS).
+- **Double Cluster Isolation:** Physical and logical separation between public catalog data and sensitive customer transactional information.
+- **JWT Multi-Role:** Role-Based Access Control (RBAC) for dashboard employees and investors.
+- **Rate Limiting:** Protection against brute-force attacks on authentication endpoints.
+- **Helmet & CORS:** Strict header configuration to prevent Cross-Site Scripting (XSS).
 
 ---
 
-## 🚀 Instalación y Desarrollo
+## 🚀 Installation & Development
 
-**1. Clonar el repositorio:**
+**1. Clone the repository:**
 ```bash
-git clone https://github.com/tu-usuario/emerald-dt-back.git
+git clone https://github.com/your-username/emerald-dt-back.git
 cd emerald-dt-back
 ```
 
-**2. Instalar dependencias:**
+**2. Install dependencies:**
 ```bash
 npm install
 ```
 
-**3. Configurar variables de entorno:**
+**3. Configure environment variables:**
 
-Crea un archivo `.env` basado en `.env.example`.
+Create a `.env` file based on `.env.example`.
 
-**4. Iniciar en modo desarrollo:**
+**4. Start in development mode:**
 ```bash
 npm run dev
 ```
 
 ---
 
-## 🛠️ Comandos de Ingeniería
+## 🛠️ Engineering Commands
 
-| Comando | Descripción |
+| Command | Description |
 |---|---|
-| `npm run dev` | Inicia el servidor con recarga en caliente (Hot Reload). |
-| `npm run build` | Compila el código a JavaScript optimizado en `/dist`. |
-| `npm run start` | Arranca el binario de producción (Uso en Railway/AWS). |
-| `npm run lint` | Verifica la integridad del código TypeScript. |
+| `npm run dev` | Starts the server with Hot Reload. |
+| `npm run build` | Compiles code to optimized JavaScript in `/dist`. |
+| `npm run start` | Launches the production binary (For Railway/AWS). |
+| `npm run lint` | Verifies TypeScript code integrity. |
 
 ---
 
@@ -87,8 +87,8 @@ npm run dev
 
 ---
 
-## ✍️ Autor
+## ✍️ Author
 
-**Nieto Laboratory** - Building the future of Colombian Emeralds.
-Diseñado para alcanzar el GitHub Top #1 Colombia.
+**Nieto Laboratory** — Building the future of Colombian Emeralds.
+Designed to reach GitHub Top #1 Colombia.
 ````
