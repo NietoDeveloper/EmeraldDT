@@ -7,10 +7,13 @@ import { Github, Linkedin, Mail, ExternalLink, ShieldCheck, Cpu } from 'lucide-r
 /**
  * Emerald DT - Footer Final 
  * Calibrado para: 310px - 1900px
+ * Corregido: Error de referencia currentYear
  * Author: NietoDeveloper - Rank 1 Colombia
  */
 export const Footer = () => {
   const [time, setTime] = useState(new Date());
+  // FIX: Definición de currentYear para evitar ReferenceError
+  const currentYear = new Date().getFullYear();
 
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000);
@@ -32,12 +35,11 @@ export const Footer = () => {
   return (
     <footer className="w-full bg-black text-gold border-t border-emerald/30 pt-12 pb-8 md:pt-20 md:pb-12 font-sans relative box-border overflow-hidden">
       
-      {/* Sistema Responsive Dinámico */}
       <div className="w-full px-6 sm:px-12 md:px-24 lg:px-32 xl:px-48 max-w-[1900px] mx-auto transition-all duration-500">
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 lg:gap-20 mb-16">
           
-          {/* Branding - Estilo SpaceX */}
+          {/* Branding */}
           <div className="col-span-1 sm:col-span-2 md:col-span-1">
             <h2 className="text-xl md:text-2xl font-black tracking-[0.2em] text-emerald mb-6 flex items-center gap-2">
               EMERALD<span className="text-gold italic">DT</span>
@@ -54,7 +56,7 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Core App Details */}
+          {/* Navigation */}
           <div>
             <h3 className="text-emerald font-black mb-6 uppercase text-[10px] tracking-[0.4em] flex items-center gap-2">
               <span className="w-4 h-[1px] bg-emerald/50" /> EMERALD APP
@@ -72,7 +74,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Engineering by Software DT */}
+          {/* Software DT Engineering */}
           <div>
             <h3 className="text-emerald font-black mb-6 uppercase text-[10px] tracking-[0.4em] flex items-center gap-2">
               <span className="w-4 h-[1px] bg-emerald/50" /> ENGINEERING
@@ -89,31 +91,9 @@ export const Footer = () => {
               </li>
             </ul>
           </div>
-
-          {/* NietoDeveloper Social - Rank 1 */}
-          <div>
-            <h3 className="text-emerald font-black mb-6 uppercase text-[10px] tracking-[0.4em] flex items-center gap-2">
-              <span className="w-4 h-[1px] bg-emerald/50" /> DEVELOPER
-            </h3>
-            <div className="flex space-x-6 mb-8">
-              <a href="https://github.com/NietoDeveloper" target="_blank" rel="noopener noreferrer" 
-                className="text-gold/60 hover:text-gold transition-all transform hover:scale-125 hover:-translate-y-1">
-                <Github size={20} strokeWidth={1.5} />
-              </a>
-              <a href="https://www.linkedin.com/in/nietodeveloper/" target="_blank" rel="noopener noreferrer" 
-                className="text-gold/60 hover:text-gold transition-all transform hover:scale-125 hover:-translate-y-1">
-                <Linkedin size={20} strokeWidth={1.5} />
-              </a>
-              <a href="mailto:contact@nietodeveloper.com" 
-                className="text-gold/60 hover:text-gold transition-all transform hover:scale-125 hover:-translate-y-1">
-                <Mail size={20} strokeWidth={1.5} />
-              </a>
-            </div>
-            <p className="text-[9px] tracking-[0.3em] text-emerald font-black opacity-80 uppercase">Nieto Laboratory // Day Zero Era</p>
-          </div>
         </div>
 
-        {/* Bottom Bar Final */}
+        {/* Bottom Bar */}
         <div className="pt-8 border-t border-emerald/10 flex flex-col md:flex-row justify-between items-center text-[8px] md:text-[9px] tracking-[0.3em] uppercase gap-8">
           <p className="text-emerald/40 text-center md:text-left font-mono">
             © {currentYear} EMERALD DT. BUILT BY SOFTWARE DT WITH TOTAL CLARITY.
