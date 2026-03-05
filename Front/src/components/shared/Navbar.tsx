@@ -4,7 +4,7 @@ import { useScrollDirection } from "@/hooks/useScrollDirection";
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { ShoppingCart, Menu, X, ChevronDown } from "lucide-react";
+import { ShoppingCart, ChevronDown } from "lucide-react";
 
 interface NavSubItem {
   name: string;
@@ -60,18 +60,16 @@ export const Navbar = () => {
           ${scrollDirection === "down" && !isMobileMenuOpen ? "-translate-y-full" : "translate-y-0"} 
           ${isAtTop 
             ? "bg-transparent py-6 md:py-10" 
-            /* ELIMINADO: border-b que causaba la línea blanca */
             : "bg-black/60 backdrop-blur-xl py-4 shadow-2xl"
           }`}
       >
-        <div className="w-full max-w-[1900px] mx-auto flex justify-between items-center px-6 sm:px-12 md:px-20 lg:px-24 transition-all duration-500">
+        <div className="w-full max-w-[1900px] mx-auto flex justify-between items-center px-6 sm:px-12 md:px-20 lg:px-24">
           
           {/* LOGO & BRAND */}
           <Link href="/" onClick={handleRefresh} className="group flex items-center gap-3 md:gap-5 z-[120] outline-none cursor-pointer">
             <div className="relative w-10 h-10 md:w-16 md:h-16 transition-all duration-700 group-hover:rotate-[360deg] group-hover:scale-110">
               <Image src="/assets/img/logo.png" alt="Emerald DT Logo" fill className="object-contain" />
             </div>
-
             <div className="flex items-center gap-1 md:gap-2">
               <span className="font-bold tracking-[0.2em] uppercase text-emerald-500 text-lg md:text-3xl transition-all duration-500 group-hover:text-gold group-hover:-translate-y-1">
                 Emerald
@@ -82,7 +80,7 @@ export const Navbar = () => {
             </div>
           </Link>
 
-          {/* DESKTOP MENU - Texto Gold y Hover Flotante */}
+          {/* DESKTOP MENU */}
           <div className="hidden lg:flex items-center gap-8 xl:gap-14">
             {navLinks.map((link) => (
               <div key={link.name} className="relative group/item">
@@ -91,29 +89,15 @@ export const Navbar = () => {
                   className="flex items-center gap-2 text-[10px] xl:text-[11px] uppercase tracking-[0.5em] font-bold text-gold/70 hover:text-gold hover:-translate-y-1.5 hover:scale-110 transition-all duration-300"
                 >
                   {link.name}
-                  {link.subItems && link.subItems.length > 0 && (
+                  {link.subItems && (
                     <ChevronDown size={12} className="group-hover/item:rotate-180 transition-transform duration-300 opacity-70" />
                   )}
                 </Link>
-
-                {link.subItems && link.subItems.length > 0 && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-56 pt-6 opacity-0 translate-y-2 pointer-events-none group-hover/item:opacity-100 group-hover/item:translate-y-0 group-hover/item:pointer-events-auto transition-all duration-500">
-                    <div className="bg-black/80 backdrop-blur-3xl border border-gold/10 p-6 shadow-[0_20px_50px_rgba(212,175,55,0.1)]">
-                      <div className="flex flex-col gap-4 relative">
-                        {link.subItems.map((sub) => (
-                          <Link key={sub.name} href={sub.href} className="text-[9px] uppercase tracking-[0.2em] text-gold/50 hover:text-gold hover:-translate-y-0.5 transition-all duration-300">
-                            {sub.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
               </div>
             ))}
           </div>
 
-          {/* ICONS & MENU TOGGLE - Gold puro */}
+          {/* ICONS & MODERN CUSTOM HAMBURGER */}
           <div className="flex items-center gap-4 md:gap-8">
             <div className="hidden md:flex items-center gap-8 text-gold/80">
               <Link href="/cart" className="hover:text-gold transition-all hover:-translate-y-1.5 hover:scale-110">
@@ -124,18 +108,20 @@ export const Navbar = () => {
               </Link>
             </div>
 
+            {/* CUSTOM ANIMATED HAMBURGER */}
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden relative z-[200] w-12 h-12 flex items-center justify-center bg-gold/5 rounded-full border border-gold/20 transition-all duration-300 hover:border-gold hover:scale-110 group outline-none"
+              className="lg:hidden relative z-[200] w-12 h-12 flex flex-col items-center justify-center bg-emerald-500/5 rounded-full border border-emerald-500/20 transition-all duration-500 hover:border-gold hover:scale-110 hover:-translate-y-1 group outline-none overflow-hidden"
             >
-              <div className="relative w-6 h-6">
-                <X 
-                  size={28} 
-                  className={`absolute inset-0 transition-all duration-500 text-gold ${isMobileMenuOpen ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-50 -rotate-90'}`} 
+              <div className="relative w-6 h-5 flex flex-col justify-between items-center transition-all duration-500">
+                <span className={`w-full h-[2px] transition-all duration-500 ease-in-out transform 
+                  ${isMobileMenuOpen ? 'rotate-45 translate-y-[9px] bg-gold' : 'bg-emerald-500 group-hover:bg-gold'}`} 
                 />
-                <Menu 
-                  size={28} 
-                  className={`absolute inset-0 transition-all duration-500 text-gold ${isMobileMenuOpen ? 'opacity-0 scale-50 rotate-90' : 'opacity-100 scale-100 rotate-0'}`} 
+                <span className={`w-full h-[2px] transition-all duration-500 ease-in-out 
+                  ${isMobileMenuOpen ? 'opacity-0 -translate-x-8' : 'bg-emerald-500 group-hover:bg-gold'}`} 
+                />
+                <span className={`w-full h-[2px] transition-all duration-500 ease-in-out transform 
+                  ${isMobileMenuOpen ? '-rotate-45 -translate-y-[9px] bg-gold' : 'bg-emerald-500 group-hover:bg-gold'}`} 
                 />
               </div>
             </button>
@@ -143,7 +129,7 @@ export const Navbar = () => {
         </div>
       </nav>
 
-      {/* MOBILE MENU OVERLAY - CUEVA DE ESMERALDAS (Total Gold) */}
+      {/* MOBILE MENU OVERLAY */}
       <div className={`fixed inset-0 z-[130] transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] 
         ${isMobileMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
       >
@@ -151,8 +137,7 @@ export const Navbar = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold/10 via-transparent to-transparent opacity-40" />
 
         <div className="relative flex flex-col h-full justify-center items-center px-10 gap-16">
-          
-          <div onClick={handleRefresh} className="cursor-pointer mb-4 transition-transform active:scale-95 hover:scale-110">
+          <div onClick={handleRefresh} className="cursor-pointer mb-4 transition-transform hover:scale-110">
              <div className="relative w-24 h-24">
                 <Image src="/assets/img/logo.png" alt="Logo" fill className="object-contain" />
              </div>
