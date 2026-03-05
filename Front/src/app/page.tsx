@@ -36,13 +36,7 @@ export default async function Home({ params }: HomePageProps) {
               <h2 className="text-emerald font-mono tracking-[0.4em] md:tracking-[0.8em] uppercase mb-8 text-[9px] md:text-xs">
                 {isEs ? '// Próximo Lanzamiento' : '// Upcoming Release'}
               </h2>
-              
-              <h3 className="text-4xl sm:text-6xl md:text-8xl lg:text-[110px] font-black uppercase mb-10 tracking-tighter leading-[0.9] text-white">
-                Muzo Star <br/> 
-                <span className="text-white/20 italic font-light hover:text-white transition-all duration-700 cursor-default">
-                  Collection
-                </span>
-              </h3>
+
               
               <p className="text-zinc-400 text-sm md:text-xl lg:text-2xl mb-14 max-w-2xl leading-relaxed font-medium">
                 {isEs 
