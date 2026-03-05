@@ -43,10 +43,7 @@ export default async function Home({ params }: HomePageProps) {
                   text={isEs ? 'Ver Detalles' : 'View Details'} 
                   variant="white" 
                 />
-                <div className="flex flex-col border-l border-emerald/30 pl-6">
-                    <span className="text-white font-bold uppercase tracking-widest text-[9px] md:text-[10px]">Nieto Lab Engineering</span>
-                    <span className="text-zinc-500 text-[9px] md:text-[10px] italic">"100% Discipline, Maximum Security."</span>
-                </div>
+
               </div>
             </div>
           </div>
