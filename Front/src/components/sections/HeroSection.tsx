@@ -18,9 +18,3 @@ export const HeroSection = () => {
 
 
   return (
-    <section className="relative h-[100dvh] w-full overflow-hidden flex flex-col justify-end pb-12 md:pb-24 lg:pb-32 bg-black">
-      
-          <source src="/assets/videos/hero-emerald.webm" type="video/webm" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
