@@ -71,11 +71,7 @@ export const HeroSection = () => {
         {/* Botones Estilo SpaceX - Emerald DT Edition */}
         <div className="flex flex-col sm:flex-row gap-4 md:gap-6 w-full sm:w-auto">
           <div className="w-full sm:w-auto">
-            <MainButton 
-              text="EXPLORE CATALOGUE" 
-              variant="white" 
-              className="w-full sm:w-auto border-2 border-white tracking-[0.2em] text-[11px] font-bold py-4 hover:bg-white hover:text-black transition-all duration-300" 
-            />
+ 
           </div>
 
         </div>
