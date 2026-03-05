@@ -81,11 +81,6 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      {/* Control de Audio Flotante */}
-      <div className="absolute bottom-6 right-6 md:bottom-10 md:right-10 z-20">
-        <MuteToggle isMuted={isMuted} onToggle={toggleMute} />
-      </div>
-
 
     </section>
   );
