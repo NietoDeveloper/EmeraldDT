@@ -16,13 +16,6 @@ export const HeroSection = () => {
     }
   }, []);
 
-  const toggleMute = () => {
-    if (videoRef.current) {
-      const newMutedState = !videoRef.current.muted;
-      videoRef.current.muted = newMutedState;
-      setIsMuted(newMutedState);
-    }
-  };
 
   return (
     <section className="relative h-[100dvh] w-full overflow-hidden flex flex-col justify-end pb-12 md:pb-24 lg:pb-32 bg-black">
