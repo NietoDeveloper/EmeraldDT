@@ -69,10 +69,7 @@ export const HeroSection = () => {
         </h1>
 
         {/* Botones Estilo SpaceX - Emerald DT Edition */}
-        <div className="flex flex-col sm:flex-row gap-4 md:gap-6 w-full sm:w-auto">
 
-
-        </div>
       </div>
 
 
