@@ -101,65 +101,7 @@ export const Navbar = () => {
                       <div className="flex flex-col gap-4 relative">
                         {link.subItems.map((sub) => (
                           <Link key={sub.name} href={sub.href} className="text-[9px] uppercase tracking-[0.2em] text-zinc-400 hover:text-[#D4AF37] hover:-translate-y-0.5 transition-all duration-300">
-                            {sub.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* ICONS & MENU TOGGLE */}
-          <div className="flex items-center gap-4 md:gap-8">
-            <div className="hidden md:flex items-center gap-8 text-white/70">
-              <Link href="/cart" className="hover:text-[#D4AF37] transition-all hover:-translate-y-1">
-                <ShoppingCart size={20} strokeWidth={1.5} />
-              </Link>
-              <Link href="/login" className="text-[10px] uppercase tracking-[0.4em] font-bold hover:text-[#D4AF37] hover:-translate-y-0.5 transition-all">
-                Access
-              </Link>
-            </div>
-
-            <button 
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden relative z-[200] w-12 h-12 flex items-center justify-center bg-white/5 rounded-full border border-white/10 transition-all duration-300 hover:border-[#D4AF37] group outline-none"
-            >
-              <div className="relative w-6 h-6">
-                <X 
-                  size={28} 
-                  className={`absolute inset-0 transition-all duration-500 text-white group-hover:text-[#D4AF37] ${isMobileMenuOpen ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-50 -rotate-90'}`} 
-                />
-                <Menu 
-                  size={28} 
-                  className={`absolute inset-0 transition-all duration-500 text-white group-hover:text-[#D4AF37] ${isMobileMenuOpen ? 'opacity-0 scale-50 rotate-90' : 'opacity-100 scale-100 rotate-0'}`} 
-                />
-              </div>
-            </button>
-          </div>
-        </div>
-      </nav>
-
-      {/* MOBILE MENU OVERLAY - CUEVA DE ESMERALDAS */}
-      <div className={`fixed inset-0 z-[130] transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] 
-        ${isMobileMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
-      >
-        <div className="absolute inset-0 bg-[#021510] opacity-98" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-900/40 via-transparent to-transparent opacity-60" />
-
-        <div className="relative flex flex-col h-full justify-center items-center px-10 gap-16">
-
-
-          
-
-          <div className={`flex gap-16 items-center transition-all duration-1000 delay-300 ${isMobileMenuOpen ? "opacity-100" : "opacity-0"}`}>
-             <Link href="/cart" onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-[#D4AF37] transition-all hover:-translate-y-1"><ShoppingCart size={32}/></Link>
-             <Link href="/login" onClick={() => setIsMobileMenuOpen(false)} className="text-sm uppercase tracking-[0.5em] font-black text-white hover:text-[#D4AF37] transition-all hover:-translate-y-1">Access</Link>
-          </div>
-        </div>
-      </div>
+   
     </>
   );
 };
