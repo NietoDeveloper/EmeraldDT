@@ -61,7 +61,6 @@ export const HeroSection = () => {
           </h2>
         </div>
 
-        {/* Título Principal - Con sombra para legibilidad en fondos claros */}
         <h1 className="text-[14vw] sm:text-[10vw] md:text-[90px] lg:text-[110px] xl:text-[130px] font-bold uppercase mb-8 leading-[0.85] tracking-tighter text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">
           Colombian <br /> 
           <span className="text-emerald drop-shadow-[0_0_20px_rgba(16,185,129,0.5)]">
