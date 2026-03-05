@@ -70,16 +70,6 @@ export const HeroSection = () => {
           </span>
         </h1>
 
-        {/* Botones */}
-        <div className="flex flex-col sm:flex-row gap-4 md:gap-6 w-full sm:w-auto">
-          <div className="w-full sm:w-auto">
-            <MainButton text="Explore Collection" variant="white" className="w-full sm:w-auto shadow-xl" />
-          </div>
-          <div className="w-full sm:w-auto">
-            <MainButton text="Technical Specs" variant="gold" className="w-full sm:w-auto shadow-xl" />
-          </div>
-        </div>
-      </div>
 
 
     </section>
