@@ -150,12 +150,7 @@ export const Navbar = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-900/40 via-transparent to-transparent opacity-60" />
 
         <div className="relative flex flex-col h-full justify-center items-center px-10 gap-16">
-          
-          <div onClick={handleRefresh} className="cursor-pointer mb-4 transition-transform active:scale-95 hover:scale-105">
-             <div className="relative w-24 h-24">
-                <Image src="/assets/img/logo.png" alt="Logo" fill className="object-contain" />
-             </div>
-          </div>
+
 
           <div className="flex flex-col items-center gap-10 w-full">
             {navLinks.map((item, index) => (
