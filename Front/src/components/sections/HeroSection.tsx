@@ -65,9 +65,7 @@ export const HeroSection = () => {
           <div className="w-full sm:w-auto">
             <MainButton text="Explore Collection" variant="white" className="w-full sm:w-auto shadow-xl" />
           </div>
-          <div className="w-full sm:w-auto">
-         
-          </div>
+
         </div>
       </div>
 
