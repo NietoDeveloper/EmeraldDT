@@ -15,32 +15,6 @@ export default async function Home({ params }: HomePageProps) {
   const lang = resolvedParams?.lang || 'en';
   const isEs = lang === 'es';
 
-  return (
-    <div className="relative w-full bg-black select-none">
-      
-      {/* SECCIÓN 1: Hero Video (Compensación de Navbar en HeroSection interior) */}
-      <section className="relative w-full h-[100dvh] overflow-hidden">
-        <HeroSection />
-      </section>
-
-      {/* SECCIÓN 2: Heritage & Collection */}
-      <section className="relative w-full min-h-screen flex items-center bg-black border-t border-emerald/10 overflow-hidden py-24 lg:py-32">
-        
-        {/* Resplandor Esmeralda */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[700px] h-[300px] md:h-[700px] bg-emerald/5 blur-[120px] rounded-full pointer-events-none" />
-        
-        <div className="w-full px-6 sm:px-12 md:px-24 lg:px-32 xl:px-48 relative z-10">
-          <div className="max-w-[1800px] mx-auto">
-            <div className="max-w-5xl">
-              
-              <h2 className="text-emerald font-mono tracking-[0.4em] md:tracking-[0.8em] uppercase mb-8 text-[9px] md:text-xs">
-                {isEs ? '// Próximo Lanzamiento' : '// Upcoming Release'}
-              </h2>
-
-
-            </div>
-          </div>
-        </div>
 
         {/* Decoración lateral técnica */}
         <div className="absolute right-8 md:right-16 bottom-24 hidden xl:block">
