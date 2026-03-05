@@ -1,4 +1,3 @@
-````markdown
 # 💎 Emerald DT - Backend Security Cluster
 ### High-Engineering Emerald Commercialization Platform
 
@@ -91,4 +90,3 @@ npm run dev
 
 **Nieto Laboratory** — Building the future of Colombian Emeralds.
 Designed to reach GitHub Top #1 Colombia.
-````
