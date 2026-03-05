@@ -27,21 +27,7 @@ export const HeroSection = () => {
   return (
     <section className="relative h-[100dvh] w-full overflow-hidden flex flex-col justify-end pb-12 md:pb-24 lg:pb-32 bg-black">
       
-      {/* Video Background - Optimización para Desktop (310px - 1900px) */}
-      <div className="absolute inset-0 z-0 bg-black">
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          playsInline
-          muted={isMuted}
-          /* object-cover en mobile para impacto visual, object-contain en desktop para no cortar la esmeralda */
-          className="w-full h-full object-cover md:object-contain object-center transition-opacity duration-700"
-        >
-          <source src="/assets/videos/hero-emerald.webm" type="video/webm" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+     
 
       {/* Efecto Scanline SpaceX - Textura técnica sutil */}
       <div className="absolute inset-0 z-[1] opacity-10 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%),linear-gradient(90deg,rgba(255,0,0,0.03),rgba(0,255,0,0.01),rgba(0,0,255,0.03))] bg-[length:100%_2px,3px_100%]" />
