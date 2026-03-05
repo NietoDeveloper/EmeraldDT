@@ -51,11 +51,6 @@ export const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-[2] pointer-events-none" />
 
 
-      {/* Indicador de Scroll SpaceX Style */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 opacity-50 z-10 pointer-events-none">
-          <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent" />
-      </div>
-
     </section>
   );
 };
