@@ -7,31 +7,29 @@ import morgan from 'morgan';
 import helmet from 'helmet';
 import { fileURLToPath } from 'url';
 
-// --- CONFIGURACIÓN DE RUTAS Y DB (Extensiones .js obligatorias en ESM) ---
 import { userDB, emeraldDB } from './config/dbConn.js'; 
 import corsOptions from './config/corsOptions.js';
 import { unknownEndpoint } from './middleware/notFound.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
-// Setup para __dirname en ESM
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app: Application = express();
 const PORT = process.env.PORT || 4000;
 
-// --- 1. SEGURIDAD DE ALTA INGENIERÍA ---
+// Security & Logging
 app.use(helmet({ contentSecurityPolicy: false })); 
 app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev')); 
 app.use(cors(corsOptions));
 
-// --- 2. MIDDLEWARES BASE ---
+// Base Middlewares
 app.use(express.json({ limit: '10mb' })); 
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// --- 3. ENDPOINTS DE CONTROL ---
+// Control Endpoints
 app.get('/health', (_req: Request, res: Response) => res.status(200).send('OK'));
 app.get('/', (_req: Request, res: Response) => {
     res.status(200).json({ 
@@ -42,29 +40,27 @@ app.get('/', (_req: Request, res: Response) => {
     });
 });
 
-// --- 4. MANEJO DE ERRORES Y NOT FOUND ---
+// Error Handling
 app.use(unknownEndpoint);
 app.use(errorHandler);
 
-// --- 5. ARRANQUE DEL SISTEMA (DOUBLE CLUSTER) ---
+// Double Cluster Initialization
 const startServer = async () => {
     try {
-        console.log('💎 Sincronizando Datacenters Emerald DT...');
+        console.log('💎 Synchronizing Emerald DT Datacenters...');
         
-        // Helper para conectar clusters de forma asíncrona
         const connectCluster = (db: any, name: string) => new Promise<void>((resolve, reject) => {
             if (db.readyState === 1) return resolve();
             db.once('open', () => {
-                console.log(`📡 Conexión establecida: ${name}`);
+                console.log(`📡 Connection Established: ${name}`);
                 resolve();
             });
             db.on('error', (err: any) => {
-                console.error(`❌ Error en ${name}:`, err);
+                console.error(`❌ ${name} Error:`, err);
                 reject(err);
             });
         });
 
-        // Doble Cluster: Auth y Esmeraldas
         await Promise.all([
             connectCluster(userDB, 'UserDB (Auth & Employees)'),
             connectCluster(emeraldDB, 'EmeraldDB (Products & Catalog)')
@@ -72,12 +68,12 @@ const startServer = async () => {
         
         app.listen(PORT, () => {
             console.log('----------------------------------------------------');
-            console.log(`🚀 EMERALD DT OPERATIVO EN PUERTO: ${PORT}`);
-            console.log(`📈 ESTADO: Clase Mundial | BOGOTÁ, COLOMBIA`);
+            console.log(`🚀 EMERALD DT OPERATIONAL ON PORT: ${PORT}`);
+            console.log(`📈 STATUS: World Class | BOGOTÁ, COLOMBIA`);
             console.log('----------------------------------------------------');
         });
     } catch (err: any) {
-        console.error('💥 FALLO CRÍTICO EN CLUSTER:', err.message);
+        console.error('💥 CRITICAL CLUSTER FAILURE:', err.message);
         process.exit(1);
     }
 };
