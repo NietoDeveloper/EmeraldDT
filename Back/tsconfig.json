@@ -11,6 +11,9 @@
     "lib": ["ESNext"],
     "types": ["node"],
 
+    /* JSX Support - Crucial para archivos .tsx */
+    "jsx": "react-jsx",
+
     /* Other Outputs */
     "sourceMap": true,
     "declaration": true,
