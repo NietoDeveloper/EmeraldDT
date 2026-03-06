@@ -5,7 +5,7 @@
   "main": "dist/server.js",
   "type": "module",
   "scripts": {
-    "dev": "node --loader ts-node/esm src/server.ts",
+    "dev": "node --loader ts-node/esm src/server.tsx",
     "build": "tsc",
     "start": "node dist/server.js",
     "lint": "tsc --noEmit",
@@ -17,10 +17,19 @@
     "colombia",
     "api"
   ],
-
+  "author": "NietoDeveloper",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.8",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.10.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
   },
   "dependencies": {
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^5.0.1",
