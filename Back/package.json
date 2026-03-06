@@ -17,15 +17,7 @@
     "colombia",
     "api"
   ],
-  "author": "NietoDeveloper",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/cors": "^2.8.17",
-    "@types/express": "^5.0.0",
-    "@types/mongoose": "^5.11.97",
-    "@types/morgan": "^1.9.9",
-    "@types/node": "^22.10.0",
-    "ts-node": "^10.9.2",
+
     "typescript": "^5.7.2"
   },
   "dependencies": {
