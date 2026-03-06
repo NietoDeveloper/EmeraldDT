@@ -72,10 +72,7 @@ const startServer = async () => {
             console.log(`📈 STATUS: World Class | BOGOTÁ, COLOMBIA`);
             console.log('----------------------------------------------------');
         });
-    } catch (err: any) {
-        console.error('💥 CRITICAL CLUSTER FAILURE:', err.message);
-        process.exit(1);
-    }
+    } catch (err: any) 
 };
 
 startServer();
