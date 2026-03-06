@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Emerald DT Backend - Security Cluster Architecture",
   "main": "dist/server.js",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
-    "dev": "ts-node src/server.ts",
+    "dev": "node --loader ts-node/esm src/server.ts",
     "build": "tsc",
     "start": "node dist/server.js",
     "lint": "tsc --noEmit",
