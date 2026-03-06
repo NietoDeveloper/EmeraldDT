@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    /* File Layout - Esencial para que el build funcione */
+    /* File Layout */
     "rootDir": "./src",
     "outDir": "./dist",
 
@@ -17,18 +17,22 @@
     "declarationMap": true,
     "removeComments": true,
 
-    /* Stricter Typechecking Options - Calidad S+ */
+    /* Stricter Typechecking Options - Estándar Ciclo S+ */
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
 
-    /* Style Options - Limpieza de Código */
+    /* Style Options */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
 
     /* Recommended Options */
     "verbatimModuleSyntax": true,
@@ -36,7 +40,9 @@
     "moduleDetection": "force",
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist", "**/*.test.ts"]
