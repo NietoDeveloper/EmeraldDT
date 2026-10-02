@@ -76,7 +76,4 @@ import { Router } from 'express';
 import * as inventoryController from './inventory.controller.js';
 import { requireAuth, restrictTo } from '../auth/auth.middleware.js';
 import { validate } from '../../shared/middlewares/validate.middleware.js';
-import { updateStockSchema } from './inventory.schema.js'; // 🛡️ Escudo de validación atómica
-
-/**
- * 🛰️ INVENTORY RO
+import { updatekSchema } from './inventory.schema.js'; // 🛡️ Escudo de validación atómica
