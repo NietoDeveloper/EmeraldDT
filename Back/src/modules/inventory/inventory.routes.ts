@@ -130,7 +130,4 @@ const router = Router();
  * @access  Private [SUPER_ADMIN, EMPLOYEE]
  */
 router.patch(
-    '/stock/:id', 
-    requireAuth, 
-    restrictTo('SUPER_ADMIN', 'EMPLOYEE'),
-    validate(u
+    '/stock/:id'
