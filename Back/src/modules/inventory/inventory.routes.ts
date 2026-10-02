@@ -88,6 +88,3 @@ const router = Router();
     inventoryController.getInventoryHistory
 );
 
-export default router;
-import { Router } from 'express';
-import * as inventoryController from './
