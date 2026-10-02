@@ -84,7 +84,7 @@ import { updateStockSchema } from './inventory.schema.js'; // 🛡️ Escudo de 
  * Canales de sincronización simétrica entre el Dashboard de control y el E-commerce.
  */
 const router = Router();
- */
+ *
     inventoryController.getInventoryHistory
 );
 
