@@ -133,5 +133,4 @@ router.patch(
     '/stock/:id', 
     requireAuth, 
     restrictTo('SUPER_ADMIN', 'EMPLOYEE'),
-    validate(updateStockSchema),
-    inventoryController.updateStock
+    validate(u
