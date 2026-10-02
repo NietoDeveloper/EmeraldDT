@@ -72,5 +72,12 @@ export default router;
 
 
 
-import { Router } from 'express';/inventory.controller.js';
-import { requireAuth, restrictTo } fro// 🛡️ Escudo de validación atómica
+import { Router } from 'express';
+import * as inventoryController from './inventory.controller.js';
+import { requireAuth, restrictTo } from '../auth/auth.middleware.js';
+import { validate } from '../../shared/middlewares/validate.middleware.js';
+import { updateStockSchema } from './inventory.schema.js'; // 🛡️ Escudo de validación atómica
+
+/**
+ * 🛰️ INVENTORY ROUTE CLUSTER - LEVEL L6
+ * Endpoint Base: /api/v1/in
