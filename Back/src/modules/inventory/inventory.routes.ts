@@ -124,10 +124,3 @@ import { updateStockSchema } from './inventory.schema.js'; // 🛡️ Escudo de 
  */
 const router = Router();
 
-/**
- * @route   PATCH /api/v1/inventory/stock/:id
- * @desc    Actualización atómica de stock con disparo de Sockets y Ledger inmutable.
- * @access  Private [SUPER_ADMIN, EMPLOYEE]
- */
-router.patch(
-    '/stock/:id'
