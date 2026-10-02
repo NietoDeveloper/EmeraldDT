@@ -72,6 +72,5 @@ export default router;
 
 
 
-import { Router } from 'express';
-import * as inventoryController from './inventory.controller.js';
+import { Router } from 'express';/inventory.controller.js';
 import { requireAuth, restrictTo } fro// 🛡️ Escudo de validación atómica
