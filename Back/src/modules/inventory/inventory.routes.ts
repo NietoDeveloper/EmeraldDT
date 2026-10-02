@@ -75,7 +75,7 @@ export default router;
 import { Router } from 'express';
 import * as inventoryController from './inventory.controller.js';
 import { requireAuth, restrictTo } from '../auth/auth.middleware.js';
-import { validate } f🛡️ Escudo de validación atómi
+import { va
 
 /**
  * 🛰️ INVENTORY ROUTE CLUSTER - LEVEL L6
