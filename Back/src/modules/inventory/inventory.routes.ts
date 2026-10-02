@@ -153,15 +153,3 @@ export default router;
 import { Router } from 'express';
 import * as inventoryController from './inventory.controller.js';
 import { requireAuth, restrictTo } from '../auth/auth.middleware.js';
-import { validate } from '../../shared/middlewares/validate.middleware.js';
-import { updateStockSchema } from './inventory.schema.js'; // 🛡️ Escudo de validación atómica
-
-/**
- * 🛰️ INVENTORY ROUTE CLUSTER - LEVEL L6
- * Endpoint Base: /api/v1/inventory
- * Canales de sincronización simétrica entre el Dashboard de control y el E-commerce.
- */
-const router = Router();
-
-/**
- * @route   PATCH /api/v1/inventory/stock/:id
