@@ -140,8 +140,4 @@ router.patch(
 /**
  * @route   GET /api/v1/inventory/history/:emeraldId
  * @desc    Consulta de trazabilidad inmutable del Ledger (Cluster Omega Target)
- * @access  Private [SUPER_ADMIN]
- */
-router.get(
-    '/history/:emeraldId', 
-  
+ 
