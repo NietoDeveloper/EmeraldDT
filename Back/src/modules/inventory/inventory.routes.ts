@@ -73,8 +73,7 @@ export default router;
 
 
 import { Router } from 'express';
-import * as inventoryController from './inventory.controller.js';
-import { requireAuth, restrictTo } from '../auth/auth.middleware.js';
+import * as inventoryController from './inventory.controlle.js';
 import { va
 
 /**
