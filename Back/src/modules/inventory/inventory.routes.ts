@@ -144,12 +144,4 @@ router.patch(
  */
 router.get(
     '/history/:emeraldId', 
-    requireAuth, 
-    restrictTo('SUPER_ADMIN'),
-    inventoryController.getInventoryHistory
-);
-
-export default router;
-import { Router } from 'express';
-import * as inventoryController from './inventory.controller.js';
-import { requireAuth, restrictTo } from '../auth/auth.middleware.js';
+  
