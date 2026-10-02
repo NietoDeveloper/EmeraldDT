@@ -76,6 +76,3 @@ import { Router } from 'express';
 import * as inventoryController from './inventory.controlle.js';
 import { va
 
-/**
- * 🛰️ INVENTORY ROUTE CLUSTER - LEVEL L6
- * Endpoint Base: /api/v1/in
