@@ -17,8 +17,8 @@ const router = Router();
  * @access  Private [SUPER_ADMIN, EMPLOYEE]
  */
 router.patch(
-    '/stock/:id', 
-    requireAuth, 
+    '/stock/:id',
+    requireAuth,
     restrictTo('SUPER_ADMIN', 'EMPLOYEE'),
     validate(updateStockSchema),
     inventoryController.updateStock
@@ -30,8 +30,8 @@ router.patch(
  * @access  Private [SUPER_ADMIN]
  */
 router.get(
-    '/history/:emeraldId', 
-    requireAuth, 
+    '/history/:emeraldId',
+    requireAuth,
     restrictTo('SUPER_ADMIN'),
     inventoryController.getInventoryHistory
 );
