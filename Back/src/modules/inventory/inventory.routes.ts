@@ -85,10 +85,6 @@ import { updateStockSchema } from './inventory.schema.js'; // 🛡️ Escudo de 
  */
 const router = Router();
  */
-router.get(
-    '/history/:emeraldId', 
-    requireAuth, 
-    restrictTo('SUPER_ADMIN'),
     inventoryController.getInventoryHistory
 );
 
