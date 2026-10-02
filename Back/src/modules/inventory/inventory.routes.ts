@@ -79,5 +79,4 @@ import { validate } from '../../shared/middlewares/validate.middleware.js';
 import { updateStockSchema } from './inventory.schema.js'; // 🛡️ Escudo de validación atómica
 
 /**
- * 🛰️ INVENTORY ROUTE CLUSTER - LEVEL L6
- * Endpoint Base: /api/v1/in
+ * 🛰️ INVENTORY RO
