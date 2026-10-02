@@ -84,10 +84,6 @@ import { updateStockSchema } from './inventory.schema.js'; // 🛡️ Escudo de 
  * Canales de sincronización simétrica entre el Dashboard de control y el E-commerce.
  */
 const router = Router();
-aro de Sockets y Ledger inmutable.
- * @route   GET /api/v1/inventory/history/:emeraldId
- * @desc    Consulta de trazabilidad inmutable del Ledger (Cluster Omega Target)
- * @access  Private [SUPER_ADMIN]
  */
 router.get(
     '/history/:emeraldId', 
