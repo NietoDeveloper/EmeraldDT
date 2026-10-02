@@ -135,5 +135,3 @@ router.patch(
     restrictTo('SUPER_ADMIN', 'EMPLOYEE'),
     validate(updateStockSchema),
     inventoryController.updateStock
-);
-
