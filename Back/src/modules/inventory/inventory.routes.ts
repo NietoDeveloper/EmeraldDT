@@ -137,7 +137,3 @@ router.patch(
     inventoryController.updateStock
 );
 
-/**
- * @route   GET /api/v1/inventory/history/:emeraldId
- * @desc    Consulta de trazabilidad inmutable del Ledger (Cluster Omega Target)
- 
