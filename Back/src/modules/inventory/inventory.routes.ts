@@ -85,12 +85,6 @@ import { updateStockSchema } from './inventory.schema.js'; // 🛡️ Escudo de 
  */
 const router = Router();
 aro de Sockets y Ledger inmutable.
- * @access  Private [SUPER_ADMIN, EMPLOYEE]
- */
-
-    '/stock/:id', 
-
-/**
  * @route   GET /api/v1/inventory/history/:emeraldId
  * @desc    Consulta de trazabilidad inmutable del Ledger (Cluster Omega Target)
  * @access  Private [SUPER_ADMIN]
