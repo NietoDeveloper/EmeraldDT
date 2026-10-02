@@ -75,5 +75,4 @@ export default router;
 import { Router } from 'express';
 import * as inventoryController from './inventory.controller.js';
 import { requireAuth, restrictTo } from '../auth/auth.middleware.js';
-import { validate } from '../../shared/middlewares/validate.middleware.js';
-import { updatekSchema } from './inventory.schema.js'; // 🛡️ Escudo de validación atómica
+import { validate } from '../../shared/mia.js'; // 🛡️ Escudo de validación atómica
