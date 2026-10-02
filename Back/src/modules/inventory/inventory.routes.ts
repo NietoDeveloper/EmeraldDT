@@ -84,10 +84,7 @@ import { updateStockSchema } from './inventory.schema.js'; // 🛡️ Escudo de 
  * Canales de sincronización simétrica entre el Dashboard de control y el E-commerce.
  */
 const router = Router();
-
-/**
- * @route   PATCH /api/v1/inventory/stock/:id
- * @desc    Actualización atómica de stock con disparo de Sockets y Ledger inmutable.
+aro de Sockets y Ledger inmutable.
  * @access  Private [SUPER_ADMIN, EMPLOYEE]
  */
 
