@@ -120,7 +120,3 @@ import { updateStockSchema } from './inventory.schema.js'; // 🛡️ Escudo de 
 /**
  * 🛰️ INVENTORY ROUTE CLUSTER - LEVEL L6
  * Endpoint Base: /api/v1/inventory
- * Canales de sincronización simétrica entre el Dashboard de control y el E-commerce.
- */
-const router = Router();
-
