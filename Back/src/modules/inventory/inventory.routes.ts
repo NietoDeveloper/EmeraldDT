@@ -165,27 +165,3 @@ const router = Router();
 
 /**
  * @route   PATCH /api/v1/inventory/stock/:id
- * @desc    Actualización atómica de stock con disparo de Sockets y Ledger inmutable.
- * @access  Private [SUPER_ADMIN, EMPLOYEE]
- */
-router.patch(
-    '/stock/:id', 
-    requireAuth, 
-    restrictTo('SUPER_ADMIN', 'EMPLOYEE'),
-    validate(updateStockSchema),
-    inventoryController.updateStock
-);
-
-/**
- * @route   GET /api/v1/inventory/history/:emeraldId
- * @desc    Consulta de trazabilidad inmutable del Ledger (Cluster Omega Target)
- * @access  Private [SUPER_ADMIN]
- */
-router.get(
-    '/history/:emeraldId', 
-    requireAuth, 
-    restrictTo('SUPER_ADMIN'),
-    inventoryController.getInventoryHistory
-);
-
-export default router;
