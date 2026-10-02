@@ -89,11 +89,6 @@ aro de Sockets y Ledger inmutable.
  */
 
     '/stock/:id', 
-    requireAuth, 
-    restrictTo('SUPER_ADMIN', 'EMPLOYEE'),
-    validate(updateStockSchema),
-    inventoryController.updateStock
-);
 
 /**
  * @route   GET /api/v1/inventory/history/:emeraldId
