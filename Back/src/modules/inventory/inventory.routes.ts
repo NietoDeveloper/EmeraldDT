@@ -90,7 +90,7 @@ const router = Router();
  * @desc    Actualización atómica de stock con disparo de Sockets y Ledger inmutable.
  * @access  Private [SUPER_ADMIN, EMPLOYEE]
  */
-router.patch(
+
     '/stock/:id', 
     requireAuth, 
     restrictTo('SUPER_ADMIN', 'EMPLOYEE'),
