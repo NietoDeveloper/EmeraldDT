@@ -115,8 +115,4 @@ import { Router } from 'express';
 import * as inventoryController from './inventory.controller.js';
 import { requireAuth, restrictTo } from '../auth/auth.middleware.js';
 import { validate } from '../../shared/middlewares/validate.middleware.js';
-import { updateStockSchema } from './inventory.schema.js'; // 🛡️ Escudo de validación atómica
-
-/**
- * 🛰️ INVENTORY ROUTE CLUSTER - LEVEL L6
- * End
+import { updateStockSchema } from './inventory.schema.js'; // 🛡️ Escudo de validación atómi
