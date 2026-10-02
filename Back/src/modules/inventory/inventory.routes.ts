@@ -85,4 +85,4 @@ import { updateStockSchema } from './inventory.schema.js'; // 🛡️ Escudo de 
  */
 const router = Router();
  *
-    inventoryController.getInventoryHistor
+    inventoryController.getInventoryHi
