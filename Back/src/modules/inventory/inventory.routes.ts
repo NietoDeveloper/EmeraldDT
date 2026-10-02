@@ -73,5 +73,4 @@ export default router;
 
 
 import { Router } from 'express';
-import * as inventoryController from './inventory.controlle.js';
-imp
+import * as inventoryController from './inventory
