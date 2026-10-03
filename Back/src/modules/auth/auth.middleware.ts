@@ -220,5 +220,3 @@ export const requireAuth = async (req: AuthenticatedRequest, res: Response, next
 export const restrictTo = (...allowedRoles: ('SUPER_ADMIN' | 'EMPLOYEE' | 'CLIENT')[]) => {
     return (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
         if (!req.user) {
-            return res.status(401).json({ 
-
