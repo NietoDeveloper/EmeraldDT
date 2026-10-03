@@ -101,7 +101,7 @@ import { AuthenticatedRequest, IJWTPayload } from './auth.interfaces.js';
  */
 
 /**
- * 🛰️ empaqueta y valida la firma criptográfica del token portador (Bearer Token).
+ * 🛰️ empaqueta y vala firma criptográfica del token portador (Bearer Token).
  */
 export const requireAuth = async (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
     try {
