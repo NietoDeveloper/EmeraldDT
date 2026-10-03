@@ -125,10 +125,7 @@ export const requireAuth = async (req: AuthenticatedRequest, res: Response, next
         req.user = decoded; 
 
         
-        return res.status(401).json({ 
-            status: 'UNAUTHORIZED', 
-            message: 'Authentication token is corrupt, malformed or signatures do not match' 
-        });
+        return res.
     }
 };
 
