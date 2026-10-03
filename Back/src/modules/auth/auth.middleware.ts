@@ -176,9 +176,4 @@ import { AuthenticatedRequest, IJWTPayload } from './auth.interfaces.js';
 
 /**
  * 🛰️ GUARDIÁN A: AUTHENTICITY LAYER (requireAuth)
- * Intercepta, desempaqueta y valida la firma criptográfica del token portador (Bearer Token).
- */
-export const requireAuth = async (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
-    try {
-        const authHeader = req.headers.authorization;
-      
+ * Intercepta, de
