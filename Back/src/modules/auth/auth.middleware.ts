@@ -124,8 +124,7 @@ export const requireAuth = async (req: AuthenticatedRequest, res: Response, next
         // Inyección de la identidad y nivel de clearance en el flujo de la petición
         req.user = decoded; 
 
-        
-        return res.
+
     }
 };
 
