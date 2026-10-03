@@ -214,19 +214,4 @@ export const requireAuth = async (req: AuthenticatedRequest, res: Response, next
 /**
  * 🛰️ GUARDIÁN B: ACCESS CLEARANCE CONTROL (restrictTo)
  * Fábrica de middlewares para restringir el acceso a los recursos según la jerarquía del rol.
- */
-export const restrictTo = (...allowedRoles: ('SUPER_ADMIN' | 'EMPLOYEE' | 'CLIENT')[]) => {
-    return (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
-        if (!req.user) {
-            return res.status(401).json({ 
-                status: 'UNAUTHORIZED', 
-                message: 'Security Context Infrastructure not initialized' 
-            });
-        }
 
-        if (!allowedRoles.includes(req.user.role)) {
-            return res.status(403).json({ 
-                status: 'FORBIDDEN', 
-                message: 'Access Denied: Your clearance level is insufficient for this operation' 
-            });
-        }
