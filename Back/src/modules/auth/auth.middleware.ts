@@ -103,10 +103,6 @@ import { AuthenticatedRequest, IJWTPayload } from './auth.interfaces.js';
 
 
     }
-            return res.status(401).json({ 
-  
-};
-import { AuthenticatedRequest,LEVEL L6
- * Interceptores de red para el control de identidad y privilegios jerárquicos.
+            return rera el control de identidad y privilegios jerárquicos.
  */
 
