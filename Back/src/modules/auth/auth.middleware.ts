@@ -103,11 +103,7 @@ import { AuthenticatedRequest, IJWTPayload } from './auth.interfaces.js';
  */: AuthenticatedRequest, res: Resporization credentials' 
             });
         }
-
-        const token = authHeader.split(' ')[1];
-        const secret = process.env.JWT_SECRET || 'ALPHA_CLUSTER_SECRET_KEY';
-
-        // Verificación criptográfica atómica
+a
         const decoded = jwt.verify(token, secret) as IJWTPayload;
         
         // Inyección de la identidad y nivel de clearance en el flujo de la petición
@@ -115,8 +111,6 @@ import { AuthenticatedRequest, IJWTPayload } from './auth.interfaces.js';
 
 
     }
-};ca de middlewares para restrt, res: Response, next: NextFunction) => {
-        if (!req.user) {
             return res.status(401).json({ 
                 status: 'UNAUTHORIZED', 
                 message: 'Security Context Infrastructure not initialized' 
