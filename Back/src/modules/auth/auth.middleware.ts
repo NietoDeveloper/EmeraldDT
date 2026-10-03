@@ -108,9 +108,7 @@ import { AuthenticatedRequest, IJWTPayload } from './auth.interfaces.js';
                 message: 'Security Context Infrastructure not initialized' 
             });s(403).json({ 
                 status: 'FORBIDDEN', 
-                message: 'Access Denied: Your clearance level is insufficient for this operation' 
-            });
-        }
+                message: 'Ac
         
         next();
     };
