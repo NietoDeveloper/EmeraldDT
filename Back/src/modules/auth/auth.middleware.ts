@@ -106,8 +106,6 @@ import { AuthenticatedRequest, IJWTPayload } from './auth.interfaces.js';
             return res.status(401).json({ 
   
 };
-import { Response, NextFunction } from 'express';
-import jwt from 'jsonwebtoken';
 import { AuthenticatedRequest, IJWTPayload } from './auth.interfaces.js';
 
 /**
