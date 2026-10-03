@@ -195,13 +195,7 @@ export const requireAuth = async (req: AuthenticatedRequest, res: Response, next
         const decoded = jwt.verify(token, secret) as IJWTPayload;
         
         // Inyección de la identidad y nivel de clearance en el flujo de la petición
-        req.user = decoded; 
-        next();
-    } catch (error: any) {
-        // 🔍 Telemetría detallada de errores para el ciclo de vida de la sesión en el Front-End
-        if (error.name === 'TokenExpiredError') {
-            return res.status(401).json({ 
-                status: 'TOKEN_EXPIRED', 
+        req.u'TOKEN_EXPIRED', 
                 message: 'Your authentication token has expired. Re-authentication required' 
             });
         }
