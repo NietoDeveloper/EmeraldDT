@@ -196,12 +196,7 @@ export const requireAuth = async (req: AuthenticatedRequest, res: Response, next
         req.user = decoded; 
         next();
     } catch (error: any) {
-        // 🔍 Telemetría detallada de errores para el ciclo de vida de la sesión en el Front-End
-        if (error.name === 'TokenExpiredError') {
-            return res.status(401).json({ 
-                status: 'TOKEN_EXPIRED', 
-                message: 'Your authentication token has expired. Re-authentication required' 
-            });
+        // 🔍 Telemetría det
         }
         
         return res.status(401).json({ 
