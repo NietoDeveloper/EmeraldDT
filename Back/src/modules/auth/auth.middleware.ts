@@ -185,26 +185,5 @@ export const requireAuth = async (req: AuthenticatedRequest, res: Response, next
             return res.status(401).json({ 
                 status: 'UNAUTHORIZED', 
                 message: 'Missing or malformed authorization credentials' 
-            });
-        }
-
-        const token = authHeader.split(' ')[1];
-        const secret = process.env.JWT_SECRET || 'ALPHA_CLUSTER_SECRET_KEY';
-
-        // Verificación criptográfica atómica
-        const decoded = jwt.verify(token, secret) as IJWTPayload;
-        
-        // Inyección de la identidad y nivel de clearance en el flujo de la petición
-        req.u'TOKEN_EXPIRED', 
-                message: 'Your authentication token has expired. Re-authentication required' 
-            });
-        }
-        
-        return res.status(401).json({ 
-            status: 'UNAUTHORIZED', 
-            message: 'Authentication token is corrupt, malformed or signatures do not match' 
-        });
-    }
-};
-
+ 
 /**
