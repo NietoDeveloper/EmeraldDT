@@ -126,10 +126,7 @@ export const requireAuth = async (req: AuthenticatedRequest, res: Response, next
 
 
     }
-};ca de middlewares para restringir el acceso a los recursos según la jerarquía del rol.
- */
-export const restrictTo = (...allowedRoles: ('SUPER_ADMIN' | 'EMPLOYEE' | 'CLIENT')[]) => {
-    return (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
+};ca de middlewares para restrt, res: Response, next: NextFunction) => {
         if (!req.user) {
             return res.status(401).json({ 
                 status: 'UNAUTHORIZED', 
