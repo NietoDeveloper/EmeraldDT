@@ -214,9 +214,3 @@ export const requireAuth = async (req: AuthenticatedRequest, res: Response, next
 };
 
 /**
- * 🛰️ GUARDIÁN B: ACCESS CLEARANCE CONTROL (restrictTo)
- * Fábrica de middlewares para restringir el acceso a los recursos según la jerarquía del rol.
- */
-export const restrictTo = (...allowedRoles: ('SUPER_ADMIN' | 'EMPLOYEE' | 'CLIENT')[]) => {
-    return (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
-        if (!req.user) {
