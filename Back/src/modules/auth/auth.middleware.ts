@@ -101,8 +101,7 @@ import { AuthenticatedRequest, IJWTPayload } from './auth.interfaces.js';
  */
 
 /**ráfica del token portador (Bearer Token).
- */
-export const requireAuth = async (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
+ */: AuthenticatedRequest, res: Response, next: NextFunction) => {
     try {authorization;
         if (!authHeader || !authHeader.startsWith('Bearer ')) {
             return res.status(401).json({ 
