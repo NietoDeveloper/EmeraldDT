@@ -186,25 +186,7 @@ export const requireAuth = async (req: AuthenticatedRequest, res: Response, next
             });
         }
 
-        const token = authHeader.split(' ')[1];
-        const secret = process.env.JWT_SECRET || 'ALPHA_CLUSTER_SECRET_KEY';
 
-        // Verificación criptográfica atómica
-        const decoded = jwt.verify(token, secret) as IJWTPayload;
-        
-        // Inyección de la identidad y nivel de clearance en el flujo de la petición
-        req.user = decoded; 
-        next();
-    } catch (error: any) {
-        // 🔍 Telemetría det
-        }
-        
-        return res.status(401).json({ 
-            status: 'UNAUTHORIZED', 
-            message: 'Authentication token is corrupt, malformed or signatures do not match' 
-        });
-    }
-};
 
 /**
  * 🛰️ GUARDIÁN B: ACCESS CLEARANCE CONTROL (restrictTo)
