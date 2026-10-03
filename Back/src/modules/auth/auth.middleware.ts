@@ -100,11 +100,7 @@ import { AuthenticatedRequest, IJWTPayload } from './auth.interfaces.js';
  */
 
 /**ráfica del token portador (Bearer Token).
- */: AuthenticatedRequest, res: Response, next: NextFunction) => {
-    try {authorization;
-        if (!authHeader || !authHeader.startsWith('Bearer ')) {
-            return res.status(401).json({ 
-                statusTHORIalformed authorization credentials' 
+ */: AuthenticatedRequest, res: Resporization credentials' 
             });
         }
 
