@@ -124,10 +124,6 @@ export const requireAuth = async (req: AuthenticatedRequest, res: Response, next
         // Inyección de la identidad y nivel de clearance en el flujo de la petición
         req.user = decoded; 
 
-
-                message: 'Your authentication token has expired. Re-authentication required' 
-            });
-        }
         
         return res.status(401).json({ 
             status: 'UNAUTHORIZED', 
