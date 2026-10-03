@@ -104,14 +104,7 @@ import { AuthenticatedRequest, IJWTPayload } from './auth.interfaces.js';
 
     }
             return res.status(401).json({ 
-                status: 'UNAUTHORIZED', 
-                message: 'Security Context Infrastructure not initialized' 
-            });s(403).json({ 
-                status: 'FORBIDDEN', 
-                message: 'Ac
-        
-        next();
-    };
+  
 };
 import { Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
