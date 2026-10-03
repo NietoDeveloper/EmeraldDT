@@ -94,16 +94,7 @@ export const restrictTo = (...allowedRoles: ('SUPER_ADMIN' | 'EMPLOYEE' | 'CLIEN
 
 import { Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import { nc (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
-    try {
-        c'Your authentication token has expired. Re-authentication required' 
-            });
-        }
-        
-        return res.status(401).json({ 
-            status: 'UNAUTHORIZED', 
-            message: 'Authentication token is corrupt, malformed or signatures do not match' 
-        });
+import { nc (req: Authentica
     }
 };
 
