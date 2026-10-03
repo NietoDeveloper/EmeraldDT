@@ -105,8 +105,7 @@ import { AuthenticatedRequest, IJWTPayload } from './auth.interfaces.js';
     try {authorization;
         if (!authHeader || !authHeader.startsWith('Bearer ')) {
             return res.status(401).json({ 
-                status: 'UNAUTHORIZED', 
-                message: 'Missing or malformed authorization credentials' 
+                status: 'UNAUTHORIalformed authorization credentials' 
             });
         }
 
