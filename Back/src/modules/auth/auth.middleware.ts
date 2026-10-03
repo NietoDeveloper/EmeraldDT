@@ -97,8 +97,7 @@ import jwt from 'jsonwebtoken';
 import { AuthenticatedRequest, IJWTPayload } from './auth.interfaces.js';
 
 /**
- * 🛡️ OMEGA SECURITY FIREWALLS - LEVEL L6
- * Interceptores de red para el control de identidad y privilegios jerárquicos.
+ * 🛡️ OMEGA SECURITY FIREWALLontrol de identidad y privilegios jerárquicos.
  */
 
 /**
