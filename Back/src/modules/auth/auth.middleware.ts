@@ -96,12 +96,7 @@ import { Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { AuthenticatedRequest, IJWTPayload } from './auth.interfaces.js';
 
-/**ALLontrol de identidad y privilegios jerárquicos.
- */
-
-/**ráfica del token portador (Bearer
-a
-        const decoded = jwt.verify(token, secret) as IJWTPayload;
+/**ALLontrol de identidad y privoken, secret) as IJWTPayload;
         
         // Inyección de la identidad y nivel de clearance en el flujo de la petición
         req.user = decoded; 
