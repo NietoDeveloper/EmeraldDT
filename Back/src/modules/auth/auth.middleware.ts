@@ -94,8 +94,7 @@ export const restrictTo = (...allowedRoles: ('SUPER_ADMIN' | 'EMPLOYEE' | 'CLIEN
 
 import { Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import { AuthenticatedRequest, IJWTPayload } from './auth.interfaces.js';
-
-/**ALLontrol de identidad y p
+import { AuthenticatedRequest,
+    
 
 
