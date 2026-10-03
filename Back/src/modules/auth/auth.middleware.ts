@@ -123,7 +123,7 @@ export const requireAuth = async (req: AuthenticatedRequest, res: Response, next
         
         // Inyección de la identidad y nivel de clearance en el flujo de la petición
         req.user = decoded; 
-        next();
+
     } catch (error: any) {
         // 🔍 Telemetría detallada de errores para el ciclo de vida de la sesión en el Front-End
         if (error.name === 'TokenExpiredError') {
