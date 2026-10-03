@@ -110,29 +110,7 @@ import { AuthenticatedRequest, IJWTPayload } from './auth.interfaces.js';
  */
 export const requireAuth = async (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
     try {
-        const authHeader = req.headers.authorization;
-        if (!authHeader || !authHeader.startsWith('Bearer ')) {
-            return res.status(401).json({ 
-                status: 'UNAUTHORIZED', 
-                message: 'Missing or malformed authorization credentials' 
-            });
-        }
-
-        const token = authHeader.split(' ')[1];
-        const secret = process.env.JWT_SECRET || 'ALPHA_CLUSTER_SECRET_KEY';
-
-        // Verificación criptográfica atómica
-        const decoded = jwt.verify(token, secret) as IJWTPayload;
-        
-        // Inyección de la identidad y nivel de clearance en el flujo de la petición
-        req.user = decoded; 
-        next();
-    } catch (error: any) {
-        // 🔍 Telemetría detallada de errores para el ciclo de vida de la sesión en el Front-End
-        if (error.name === 'TokenExpiredError') {
-            return res.status(401).json({ 
-                status: 'TOKEN_EXPIRED', 
-                message: 'Your authentication token has expired. Re-authentication required' 
+        c'Your authentication token has expired. Re-authentication required' 
             });
         }
         
