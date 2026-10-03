@@ -221,13 +221,7 @@ export const restrictTo = (...allowedRoles: ('SUPER_ADMIN' | 'EMPLOYEE' | 'CLIEN
     return (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
         if (!req.user) {
             return res.status(401).json({ 
-                status: 'UNAUTHORIZED', 
-                message
-        }
-        }
-        
-        next();
-    };
+         
 };
 
 
