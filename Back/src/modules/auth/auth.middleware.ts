@@ -181,12 +181,3 @@ export const requireAuth = async (req: AuthenticatedRequest, res: Response, next
         const authHeader = req.headers.authorization;
         if (!authHeader || !authHeader.startsWith('Bearer ')) {
             return res.status(401).json({ 
-                status: 'UNAUTHORIZED', 
-                message: 'Missing or malformed authorization credentials' 
-            });
-        }
-
-
-
-/**
- * 🛰️ GUARDIÁN B: ACCESS CLEARANCE CONTROL (restrictTo)
