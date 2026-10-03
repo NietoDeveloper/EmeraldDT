@@ -94,21 +94,7 @@ export const restrictTo = (...allowedRoles: ('SUPER_ADMIN' | 'EMPLOYEE' | 'CLIEN
 
 import { Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import { AuthenticatedRequest,
-    import { Response, NextFunction } from 'express';
-import jwt from 'jsonwebtoken';
-import { AuthenticatedRequest, IJWTPayload } from './auth.interfaces.js';
-
-/**
- * 🛡️ OMEGA SECURITY FIREWALLS - LEVEL L6
- * Interceptores de red para el control de identidad y privilegios jerárquicos.
- */
-
-/**
- * 🛰️ GUARDIÁN A: AUTHENTICITY LAYER (requireAuth)
- * Intercepta, desempaqueta y valida la firma criptográfica del token portador (Bearer Token).
- */
-export const requireAuth = async (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
+import { nc (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
     try {
         c'Your authentication token has expired. Re-authentication required' 
             });
