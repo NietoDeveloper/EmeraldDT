@@ -222,8 +222,7 @@ export const restrictTo = (...allowedRoles: ('SUPER_ADMIN' | 'EMPLOYEE' | 'CLIEN
         if (!req.user) {
             return res.status(401).json({ 
                 status: 'UNAUTHORIZED', 
-                message: 'Security Context Infrastructure not initialized' 
-            });
+                message
         }
         }
         
