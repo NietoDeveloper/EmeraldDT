@@ -102,7 +102,3 @@ import { AuthenticatedRequest, IJWTPayload } from './auth.interfaces.js';
         req.user = decoded; 
 
 
-    }
-            return rera el control de identidad y privilegios jerárquicos.
- */
-
