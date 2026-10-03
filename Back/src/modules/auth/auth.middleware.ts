@@ -96,8 +96,7 @@ import { Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { AuthenticatedRequest, IJWTPayload } from './auth.interfaces.js';
 
-/**
- * 🛡️ OMEGA SECURITY FIREWALLontrol de identidad y privilegios jerárquicos.
+/**ALLontrol de identidad y privilegios jerárquicos.
  */
 
 /**ráfica del token portador (Bearer Token).
