@@ -230,7 +230,3 @@ export const restrictTo = (...allowedRoles: ('SUPER_ADMIN' | 'EMPLOYEE' | 'CLIEN
                 message: 'Access Denied: Your clearance level is insufficient for this operation' 
             });
         }
-        
-        next();
-    };
-};
