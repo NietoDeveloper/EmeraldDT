@@ -15,9 +15,9 @@ export const requireAuth = async (req: AuthenticatedRequest, res: Response, next
     try {
         const authHeader = req.headers.authorization;
         if (!authHeader || !authHeader.startsWith('Bearer ')) {
-            return res.status(401).json({ 
-                status: 'UNAUTHORIZED', 
-                message: 'Missing or malformed authorization credentials' 
+            return res.status(401).json({
+                status: 'UNAUTHORIZED',
+                message: 'Missing or malformed authorization credentials'
             });
         }
 
@@ -26,22 +26,22 @@ export const requireAuth = async (req: AuthenticatedRequest, res: Response, next
 
         // Verificación criptográfica atómica
         const decoded = jwt.verify(token, secret) as IJWTPayload;
-        
+
         // Inyección de la identidad y nivel de clearance en el flujo de la petición
-        req.user = decoded; 
+        req.user = decoded;
         next();
     } catch (error: any) {
         // 🔍 Telemetría detallada de errores para el ciclo de vida de la sesión en el Front-End
         if (error.name === 'TokenExpiredError') {
-            return res.status(401).json({ 
-                status: 'TOKEN_EXPIRED', 
-                message: 'Your authentication token has expired. Re-authentication required' 
+            return res.status(401).json({
+                status: 'TOKEN_EXPIRED',
+                message: 'Your authentication token has expired. Re-authentication required'
             });
         }
-        
-        return res.status(401).json({ 
-            status: 'UNAUTHORIZED', 
-            message: 'Authentication token is corrupt, malformed or signatures do not match' 
+
+        return res.status(401).json({
+            status: 'UNAUTHORIZED',
+            message: 'Authentication token is corrupt, malformed or signatures do not match'
         });
     }
 };
@@ -53,40 +53,19 @@ export const requireAuth = async (req: AuthenticatedRequest, res: Response, next
 export const restrictTo = (...allowedRoles: ('SUPER_ADMIN' | 'EMPLOYEE' | 'CLIENT')[]) => {
     return (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
         if (!req.user) {
-            return res.status(401).json({ 
-                status: 'UNAUTHORIZED', 
-                message: 'Security Context Infrastructure not initialized' 
+            return res.status(401).json({
+                status: 'UNAUTHORIZED',
+                message: 'Security Context Infrastructure not initialized'
             });
         }
 
         if (!allowedRoles.includes(req.user.role)) {
-            return res.status(403).json({ 
-                status: 'FORBIDDEN', 
-                message: 'Access Denied: Your clearance level is insufficient for this operation' 
+            return res.status(403).json({
+                status: 'FORBIDDEN',
+                message: 'Access Denied: Your clearance level is insufficient for this operation'
             });
         }
-        
+
         next();
     };
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
