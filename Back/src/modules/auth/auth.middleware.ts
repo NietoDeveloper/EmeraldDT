@@ -225,12 +225,6 @@ export const restrictTo = (...allowedRoles: ('SUPER_ADMIN' | 'EMPLOYEE' | 'CLIEN
                 message: 'Security Context Infrastructure not initialized' 
             });
         }
-
-        if (!allowedRoles.includes(req.user.role)) {
-            return res.status(403).json({ 
-                status: 'FORBIDDEN', 
-                message: 'Access Denied: Your clearance level is insufficient for this operation' 
-            });
         }
         
         next();
