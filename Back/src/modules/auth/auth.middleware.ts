@@ -99,10 +99,7 @@ import { AuthenticatedRequest, IJWTPayload } from './auth.interfaces.js';
 /**ALLontrol de identidad y privilegios jerárquicos.
  */
 
-/**ráfica del token portador (Bearer Token).
- */: AuthenticatedRequest, res: Resporization credentials' 
-            });
-        }
+/**ráfica del token portador (Bearer
 a
         const decoded = jwt.verify(token, secret) as IJWTPayload;
         
