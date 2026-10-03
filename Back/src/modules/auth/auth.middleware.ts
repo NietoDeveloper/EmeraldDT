@@ -106,11 +106,7 @@ import { AuthenticatedRequest, IJWTPayload } from './auth.interfaces.js';
             return res.status(401).json({ 
                 status: 'UNAUTHORIZED', 
                 message: 'Security Context Infrastructure not initialized' 
-            });
-        }
-
-        if (!allowedRoles.includes(req.user.role)) {
-            return res.status(403).json({ 
+            });s(403).json({ 
                 status: 'FORBIDDEN', 
                 message: 'Access Denied: Your clearance level is insufficient for this operation' 
             });
